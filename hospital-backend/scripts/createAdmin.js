@@ -10,10 +10,8 @@ const { hashPassword } = require("../utils/password");
 
 (async function main() {
   try {
-    const email =
-      process.argv[2] || process.env.ADMIN_EMAIL || "admin@hospital.local";
-    const password =
-      process.argv[3] || process.env.ADMIN_PASSWORD || "Admin@123";
+    const email = process.argv[2] || process.env.ADMIN_EMAIL;
+    const password = process.argv[3] || process.env.ADMIN_PASSWORD;
     const name = process.argv[4] || process.env.ADMIN_NAME || "Administrator";
 
     if (!email || !password) {

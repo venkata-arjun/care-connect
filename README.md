@@ -1,27 +1,91 @@
 # Hospital Management App
 
-This repository contains a full-stack hospital management application with a Node.js/Express backend and a React (Vite) frontend.
+## Overview
+
+This project is a full-stack Hospital Management Application designed to streamline hospital operations, including appointment scheduling, user authentication, and role-based dashboards for doctors, patients, and administrators. The system is built with a modern tech stack for scalability, maintainability, and ease of deployment.
+
+---
 
 ## Features
 
-- Doctor, Patient, and Admin authentication
-- Appointment management
-- Doctor and patient dashboards
-- Secure password handling
-- RESTful API
+- **User Authentication:** Secure login and signup for patients, doctors, and admins.
+- **Role-Based Dashboards:** Separate dashboards for doctors, patients, and admins with tailored features.
+- **Appointment Management:** Patients can book, view, and cancel appointments; doctors can view and manage their appointments.
+- **Doctor Profile Management:** Doctors can view their profile and appointment statistics.
+- **Admin Controls:** Admins can manage doctors, view all appointments, and oversee system activity.
+- **Password Security:** All passwords are securely hashed and never stored in plain text.
+- **RESTful API:** Backend exposes a clean REST API for all operations.
+- **Frontend-Backend Separation:** Clean separation for easy deployment and scaling.
+
+---
+
+## Tech Stack
+
+- **Frontend:**
+  - React (with Vite for fast development)
+  - Tailwind CSS (utility-first styling)
+  - React Router (routing)
+  - Axios (API requests)
+- **Backend:**
+  - Node.js
+  - Express.js
+  - MongoDB (with Mongoose)
+  - JWT (authentication)
+  - bcrypt (password hashing)
+- **Other:**
+  - Render.com (deployment)
+  - GitHub (version control)
+
+---
 
 ## Project Structure
 
-- `hospital-backend/` — Node.js/Express backend
-- `hospital-frontend/` — React frontend (Vite)
+```
+hospital-app/
+├── hospital-backend/         # Node.js/Express backend
+│   ├── app.js
+│   ├── config/
+│   ├── controllers/
+│   ├── middleware/
+│   ├── public/
+│   ├── routes/
+│   ├── scripts/
+│   ├── utils/
+│   └── ...
+├── hospital-frontend/        # React frontend (Vite)
+│   ├── src/
+│   │   ├── components/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   └── ...
+│   ├── public/
+│   └── ...
+├── README.md
+└── .gitignore
+```
 
-## Prerequisites
+---
 
-- Node.js (v18 or above recommended)
-- npm (comes with Node.js)
-- [Render.com](https://render.com/) account for deployment (optional)
+## Application Flow
 
-## Local Setup Instructions
+1. **User Registration & Login:**
+   - Patients, doctors, and admins register/login via dedicated forms.
+   - JWT tokens are issued for session management.
+2. **Role-Based Navigation:**
+   - After login, users are redirected to their respective dashboards.
+   - Access to routes and features is controlled by user role.
+3. **Appointment Booking:**
+   - Patients can view available doctors and book appointments.
+   - Doctors see their upcoming and past appointments.
+   - Admins can view all appointments in the system.
+4. **Profile Management:**
+   - Doctors and patients can view and update their profiles.
+5. **Admin Management:**
+   - Admins can add/remove doctors, view system stats, and manage users.
+
+---
+
+## How to Run Locally
 
 ### 1. Clone the Repository
 
@@ -48,7 +112,7 @@ npm install
 
 ### 3. Configure Environment Variables
 
-- Copy `.env.example` to `.env` in `hospital-backend/` and fill in the required values (database URI, JWT secret, etc).
+- Copy `.env.example` to `.env` in `hospital-backend/` and fill in the required values (MongoDB URI, JWT secret, etc).
 
 ### 4. Run Locally
 
@@ -66,32 +130,52 @@ cd ../hospital-frontend
 npm run dev
 ```
 
-- Backend runs on `http://localhost:5000`
-- Frontend runs on `http://localhost:5173`
+- Backend: http://localhost:5000
+- Frontend: http://localhost:5173
 
-## Deployment on Render.com
+---
+
+## Deployment (Render.com)
 
 ### Backend
 
-1. Push your code to GitHub.
-2. Create a new Web Service on Render, connect your repo, and set the root directory to `hospital-backend`.
-3. Set environment variables in Render as per your `.env` file.
-4. Set the build and start commands:
-   - Build: `npm install`
-   - Start: `npm start`
+- Create a new Web Service on Render, set root to `hospital-backend`.
+- Set environment variables as per your `.env` file.
+- Build command: `npm install`
+- Start command: `npm start`
 
 ### Frontend
 
-1. Create a new Static Site on Render, set the root directory to `hospital-frontend`.
-2. Set the build command: `npm run build`
-3. Set the publish directory: `dist`
-4. Update the frontend's API URLs in `src/lib/api.js` to point to your Render backend URL.
+- Create a new Static Site on Render, set root to `hospital-frontend`.
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Update API URLs in `src/lib/api.js` to point to your Render backend URL.
 
-## Notes
+---
 
-- For any issues, ensure your backend is accessible from the frontend (CORS, correct API URLs).
-- For production, use secure environment variables and HTTPS.
+## Security Notes
+
+- Never commit `.env` or credentials to git.
+- All passwords are hashed using bcrypt.
+- Use HTTPS in production.
+
+---
+
+## Contributing
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature-branch`)
+3. Commit your changes
+4. Push to your fork and open a Pull Request
+
+---
 
 ## License
 
 This project is licensed under the MIT License.
+
+---
+
+## Contact
+
+For questions or support, please open an issue on GitHub.
