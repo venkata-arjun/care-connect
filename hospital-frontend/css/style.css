@@ -1,0 +1,540 @@
+/* Professional Hospital UI Styles - Tailwind CDN Compatible */
+:root {
+  color-scheme: light;
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-light: #3b82f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-600: #4b5563;
+  --gray-900: #111827;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+/* Typography */
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--gray-900);
+}
+h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--gray-900);
+}
+
+/* Buttons */
+.btn-primary,
+.btn-secondary,
+.btn-outline,
+.btn-danger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: #fff;
+  box-shadow: 0 1px 2px rgb(0 0 0 / 0.1);
+}
+.btn-primary:hover {
+  background-color: var(--primary-dark);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: var(--gray-100);
+  color: var(--gray-900);
+  border: 1px solid var(--gray-200);
+}
+.btn-secondary:hover {
+  background-color: var(--gray-200);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--primary);
+  border: 1px solid var(--primary);
+}
+.btn-outline:hover {
+  background-color: var(--primary);
+  color: #fff;
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: #fff;
+}
+.btn-danger:hover {
+  background-color: #dc2626;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+}
+
+/* Tab Navigation */
+.tab-button {
+  padding: 0.75rem 1.5rem;
+  border: none;
+  background: transparent;
+  color: var(--gray-600);
+  font-weight: 500;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  font-size: 0.95rem;
+}
+
+.tab-button:hover {
+  color: var(--primary);
+  background-color: #f9fafb;
+}
+
+.tab-button.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Inputs & Forms */
+.input,
+select {
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-300);
+  background-color: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--gray-900);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.02);
+  transition: all 0.2s;
+}
+.input::placeholder,
+select::placeholder {
+  color: #9ca3af;
+}
+.input:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+textarea {
+  display: block;
+  width: 100%;
+  border-radius: 0.5rem;
+  border: 1px solid var(--gray-300);
+  background-color: #fff;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.875rem;
+  color: var(--gray-900);
+  box-shadow: 0 1px 1px rgb(0 0 0 / 0.02);
+  transition: all 0.2s;
+  font-family: inherit;
+  resize: vertical;
+}
+textarea::placeholder {
+  color: #9ca3af;
+}
+textarea:focus {
+  outline: none;
+  border-color: var(--primary-light);
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+textarea:disabled {
+  background-color: var(--gray-100);
+  color: var(--gray-600);
+  cursor: not-allowed;
+}
+
+.input:disabled,
+select:disabled {
+  background-color: var(--gray-100);
+  color: var(--gray-600);
+  cursor: not-allowed;
+}
+
+label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Cards & Sections */
+.card {
+  border-radius: 0.75rem;
+  border: 1px solid var(--gray-200);
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgb(0 0 0 / 0.08);
+  transition: box-shadow 0.2s;
+}
+.card:hover {
+  box-shadow: 0 4px 12px rgb(0 0 0 / 0.1);
+}
+
+.card-header {
+  padding: 1.25rem;
+  border-bottom: 1px solid var(--gray-200);
+  font-weight: 600;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fafbfc;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+.card-footer {
+  padding: 1rem;
+  border-top: 1px solid var(--gray-200);
+  background-color: var(--gray-50);
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.section-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--gray-900);
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* Tables */
+.table {
+  min-width: 100%;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+}
+.table thead {
+  background-color: var(--gray-50);
+}
+.table th {
+  text-align: left;
+  font-weight: 600;
+  color: var(--gray-600);
+  padding: 0.75rem;
+  border-bottom: 2px solid var(--gray-200);
+}
+.table td {
+  padding: 0.75rem;
+  border-top: 1px solid var(--gray-100);
+}
+.table tbody tr:hover {
+  background-color: var(--gray-50);
+}
+
+/* Badges & Pills */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+.badge-primary {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--primary);
+}
+.badge-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+}
+.badge-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+}
+.badge-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+}
+
+/* Loading & Empty States */
+.spinner {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid var(--gray-200);
+  border-top: 2px solid var(--primary);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.empty-state {
+  text-align: center;
+  padding: 3rem 1rem;
+  color: var(--gray-600);
+  background-color: var(--gray-50);
+  border-radius: 0.5rem;
+}
+
+.empty-state-icon {
+  display: inline-block;
+  width: 3rem;
+  height: 3rem;
+  background-color: #e0e7ff;
+  color: var(--primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+/* Profile Fields */
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+}
+
+.profile-field label {
+  font-size: 0.7rem;
+  letter-spacing: 0.05em;
+  color: var(--gray-500);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+/* Appointment & Prescription Cards */
+.appointment-card {
+  background-color: #fafbfc;
+  transition: all 0.2s;
+}
+
+.appointment-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.history-item {
+  background-color: #f0fdf4;
+  transition: all 0.2s;
+}
+
+.history-item:hover {
+  box-shadow: 0 2px 8px rgba(16, 185, 129, 0.1);
+}
+
+.prescription-card {
+  background-color: #f0f9ff;
+  transition: all 0.2s;
+}
+
+.prescription-card:hover {
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.1);
+}
+
+/* Alert/Toast */
+.alert {
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.alert-success {
+  background-color: rgba(16, 185, 129, 0.1);
+  color: var(--success);
+  border-left: 4px solid var(--success);
+}
+.alert-warning {
+  background-color: rgba(245, 158, 11, 0.1);
+  color: var(--warning);
+  border-left: 4px solid var(--warning);
+}
+.alert-danger {
+  background-color: rgba(239, 68, 68, 0.1);
+  color: var(--danger);
+  border-left: 4px solid var(--danger);
+}
+
+/* Hero polish and subtle animations */
+.hero {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.06),
+    rgba(255, 255, 255, 0)
+  );
+  border-radius: 1rem;
+  padding: 2rem;
+}
+
+.fade-in {
+  animation: fadeIn 420ms ease both;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.float-y {
+  animation: floatY 6s ease-in-out infinite;
+}
+
+@keyframes floatY {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.hero-card {
+  background: linear-gradient(180deg, #ffffff, #fbfdff);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 8px 30px rgba(16, 24, 40, 0.06);
+  border: 1px solid rgba(15, 23, 42, 0.03);
+}
+
+.muted {
+  color: var(--gray-600);
+}
+
+/* Site logo sizing and subtle zoom */
+.site-logo {
+  height: 3rem;
+  width: 3rem;
+  object-fit: contain;
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+.site-logo:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 24px rgba(16, 24, 40, 0.08);
+}
+
+/* Auth page refinements */
+.auth-hero {
+  background: linear-gradient(
+    180deg,
+    rgba(59, 130, 246, 0.03),
+    rgba(255, 255, 255, 0)
+  );
+}
+
+/* Admin page background override */
+.admin-page {
+  background-color: #ffffff;
+}
+
+.auth-illustration img {
+  border-radius: 1rem;
+  box-shadow: 0 18px 50px rgba(37, 99, 235, 0.08);
+  transform: translateY(0);
+}
+
+@media (min-width: 768px) {
+  .hero-card {
+    padding: 2rem;
+  }
+}
+
+/* Responsive tweaks for small screens */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+@media (max-width: 640px) {
+  .site-logo {
+    height: 2.25rem;
+    width: 2.25rem;
+  }
+  .hero-card {
+    padding: 1rem;
+  }
+  .card-header,
+  .card-body,
+  .card-footer {
+    padding: 0.75rem;
+  }
+  /* Reduce heavy table cell padding on small screens */
+  .overflow-x-auto table th,
+  .overflow-x-auto table td {
+    padding: 0.5rem;
+  }
+  /* Ensure main container has comfortable side padding */
+  .max-w-7xl {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
