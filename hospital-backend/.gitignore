@@ -1,0 +1,29 @@
+# Node modules
+node_modules/
+
+# Environment variables (never commit credentials)
+.env
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+logs/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor folders/files
+.vscode/
+.idea/
+
+# Build / Cache files
+dist/
+build/
+.cache/
+
+# Temporary files
+*.tmp
+*.swp

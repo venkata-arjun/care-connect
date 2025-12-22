@@ -1,0 +1,144 @@
+
+### **Project: Hospital Appointment System**
+
+Stack: **React + Node/Express + PostgreSQL**
+Goal: Master SQL + Full-stack fundamentals with real business logic.
+
+---
+
+## **Phase 1 — Backend + Database Foundation**
+
+1. **Project setup**
+
+   * Initialize Node project
+   * Install Express, PostgreSQL client (pg), bcrypt, JWT
+
+2. **Database design**
+   Tables with constraints and indexes:
+
+   ```
+   patients
+   doctors
+   appointments
+   prescriptions
+   ```
+
+   Relationships:
+
+   * patient ↔ appointments = one-to-many
+   * doctor ↔ appointments = one-to-many
+   * appointments ↔ prescriptions = one-to-one
+
+3. **Migrations + seed data**
+
+   * Create schema
+   * Insert mock doctors and patients
+
+4. **Core backend features**
+
+   * Auth (signup/login) for patients + doctors + admin
+   * CRUD APIs for patients, doctors, appointments
+   * Check: prevent overlapping appointments
+   * Query filters: by date, by doctor, history, status
+
+5. **API Testing**
+
+   * Postman collection
+
+Completion checkpoint:
+Backend fully working with a real SQL structure.
+
+---
+
+## **Phase 2 — Frontend + UI**
+
+1. **React setup**
+
+   * Routing (React Router)
+   * State handling (Context or Redux)
+
+2. **Authentication UI**
+
+   * Login/signup forms
+   * Role-based navigation
+
+3. **Patient views**
+
+   * Book appointment: show available doctors + date/time
+   * View appointment history + prescription details
+   * Cancel appointment
+
+4. **Doctor views**
+
+   * Dashboard with upcoming appointments
+   * Add/view prescriptions for each completed visit
+
+5. **Admin views**
+
+   * Manage doctors
+   * Dashboard analytics (simple counts)
+
+Completion checkpoint:
+Full UI with protected pages and smooth workflows.
+
+---
+
+## **Phase 3 — Production Quality**
+
+1. **Security**
+
+   * Secure password hashing
+   * JWT + Authorization middleware
+   * Input validations
+
+2. **Optimized SQL**
+
+   * Joins
+   * Indexes for performance on queries
+
+3. **Error handling + logging**
+
+   * Detailed server responses
+
+4. **Documentation**
+
+   * README with architecture
+   * ER diagram
+   * API docs
+
+5. **Deployment**
+
+   * Backend: Render / Railway
+   * Frontend: Vercel / Netlify
+   * DB: Supabase (PostgreSQL in cloud)
+
+---
+
+## **Phase 4 — Resume Boosters (Optional Enhancements)**
+
+* Doctor weekly availability schedule
+* Appointment reminders (email)
+* Dashboard charts (appointments per doctor/date range)
+* Pagination + search
+
+These give you:
+
+* Complex SQL joins
+* Backend business rules
+* Authentication + role-based access
+* Real-world project structure
+
+---
+
+### What you'll master
+
+| Skill                  | Why it matters                                  |
+| ---------------------- | ----------------------------------------------- |
+| SQL schema design      | You’ll prove you understand relational modeling |
+| Joins + constraints    | Real backend data handling competency           |
+| Secure auth            | Required in most production apps                |
+| REST APIs              | Core backend developer skill                    |
+| React protected routes | Frontend frameworks knowledge                   |
+| Deployment             | Shows you can deliver a full product            |
+
+
