@@ -192,5 +192,3 @@ This project is licensed under the MIT License.
 ## Support
 
 For bugs, issues, or feature requests, open an issue in the repository.
-
----
