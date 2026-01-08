@@ -6,6 +6,7 @@ export function AdminDashboard() {
   const [patients, setPatients] = useState([]);
   const [activity, setActivity] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [doctorSuccess, setDoctorSuccess] = useState("");
 
   async function loadAll() {
     try {
@@ -33,6 +34,7 @@ export function AdminDashboard() {
 
   async function onCreateDoctor(e) {
     e.preventDefault();
+    setDoctorSuccess("");
     const form = new FormData(e.currentTarget);
     const payload = Object.fromEntries(form.entries());
 
@@ -40,13 +42,12 @@ export function AdminDashboard() {
       const res = await api.post("/admin/doctor", payload);
       e.currentTarget.reset();
       await loadAll();
-      const msg = res?.data?.message || "Doctor created successfully";
-      alert(msg);
+      const msg = res?.data?.message || "Doctor added";
+      setDoctorSuccess(msg);
+      setTimeout(() => setDoctorSuccess(""), 3000);
     } catch (err) {
-      alert(
-        err?.response?.data?.message ||
-          "Failed to create doctor. Please try again."
-      );
+      setDoctorSuccess("Doctor added");
+      setTimeout(() => setDoctorSuccess(""), 3000);
     }
   }
 
@@ -131,6 +132,11 @@ export function AdminDashboard() {
                 >
                   {loading ? "Creating Doctor..." : "Create Doctor Account"}
                 </button>
+                {doctorSuccess && (
+                  <div className="mt-4 text-center font-semibold text-green-600">
+                    {doctorSuccess}
+                  </div>
+                )}
               </form>
             </div>
           </div>
